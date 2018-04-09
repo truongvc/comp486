@@ -22,6 +22,8 @@ public class Player extends GameObject {
     boolean isPressingRight = false;
     boolean isPressingLeft = false;
 
+    public MachineGun bfg;
+
     Player(Context context, float worldStartX,
            float worldStartY, int pixelsPerMeter) {
 
@@ -67,6 +69,8 @@ public class Player extends GameObject {
         rectHitboxHead = new RectHitbox();
         rectHitboxLeft = new RectHitbox();
         rectHitboxRight = new RectHitbox();
+
+        bfg = new MachineGun();
     }//end constructor
 
     public void update(long fps, float gravity) {
@@ -109,6 +113,9 @@ public class Player extends GameObject {
 
             // isFalling = true;
         }
+
+        bfg.update(fps, gravity);
+
         //let's go!
         this.move(fps);
         //Update all the hitboxes to the new location
@@ -143,6 +150,24 @@ public class Player extends GameObject {
         rectHitboxRight.right = lx + getWidth() * .7f;
 
     }//end update
+
+    public void restorePreviousVelocity(){
+        if(!isJumping && !isFalling){
+            if(getFacing() == LEFT){
+                isPressingLeft = true;
+                setxVelocity(-MAX_X_VELOCITY);
+            } else {
+                isPressingRight = true;
+                setxVelocity(MAX_X_VELOCITY);
+            }
+        }
+    }
+
+    public boolean pullTringger(){
+        //try and fire a shot
+        return bfg.shoot(this.getWorldLocation().x,
+                this.getWorldLocation().y, getFacing(), getHeight());
+    }
 
     public int checkCollisions(RectHitbox rectHitbox) {
         int collided = 0;//no collisions

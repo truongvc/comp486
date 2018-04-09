@@ -1,0 +1,41 @@
+<application>
+  <component name="ActionsCollector">
+    <counts>
+      <entry action="$Paste" count="1" />
+      <entry action="$Undo" count="13" />
+      <entry action="Android.CreateResourceDirectory" count="2" />
+      <entry action="CheckinProject" count="3" />
+      <entry action="EditorBackSpace" count="273" />
+      <entry action="EditorChooseLookupItem" count="226" />
+      <entry action="EditorCopy" count="8" />
+      <entry action="EditorCut" count="1" />
+      <entry action="EditorDelete" count="84" />
+      <entry action="EditorDeleteLine" count="18" />
+      <entry action="EditorDown" count="1440" />
+      <entry action="EditorDownWithSelection" count="2" />
+      <entry action="EditorEnter" count="247" />
+      <entry action="EditorLeft" count="106" />
+      <entry action="EditorLeftWithSelection" count="69" />
+      <entry action="EditorLineEnd" count="112" />
+      <entry action="EditorLineEndWithSelection" count="4" />
+      <entry action="EditorLineStart" count="32" />
+      <entry action="EditorLineStartWithSelection" count="6" />
+      <entry action="EditorPaste" count="17" />
+      <entry action="EditorRight" count="57" />
+      <entry action="EditorRightWithSelection" count="1" />
+      <entry action="EditorStartNewLine" count="1" />
+      <entry action="EditorTab" count="25" />
+      <entry action="EditorUp" count="488" />
+      <entry action="EditorUpWithSelection" count="24" />
+      <entry action="Find" count="4" />
+      <entry action="Git.Branches" count="2" />
+      <entry action="NewClass" count="6" />
+      <entry action="OpenFile" count="2" />
+      <entry action="QuickJavaDoc" count="1" />
+      <entry action="RenameElement" count="1" />
+      <entry action="RevealIn" count="2" />
+      <entry action="Run" count="12" />
+      <entry action="SaveAll" count="27" />
+    </counts>
+  </component>
+</application>

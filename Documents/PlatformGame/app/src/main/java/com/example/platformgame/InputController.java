@@ -79,7 +79,9 @@ public class InputController {
                         } else if (jump.contains(x,y)){
                             l.player.startJump(sound);
                         } else if (shoot.contains(x,y)){
-
+                            if(l.player.pullTringger()){
+                                sound.playSound("shoot");
+                            }
                         } else if (pause.contains(x,y)) {
                             l.switchPlayingStatus();
                         }
@@ -104,6 +106,9 @@ public class InputController {
                             l.player.startJump(sound);
                         }else if(shoot.contains(x,y)){
                             //handle shooting here
+                            if(l.player.pullTringger()){
+                                sound.playSound("shoot");
+                            }
                         }else if(pause.contains(x,y)){
                             l.switchPlayingStatus();
                         }
@@ -118,6 +123,9 @@ public class InputController {
                             //Log.w("leftP:","up");
                         }else if(shoot.contains(x,y)){
                             //handle shooting here
+                            if(l.player.pullTringger()){
+                                sound.playSound("shoot");
+                            }
                         }else if(jump.contains(x,y)){
                             //handle more jumping stuff here later
                         }
