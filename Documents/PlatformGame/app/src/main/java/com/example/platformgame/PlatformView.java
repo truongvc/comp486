@@ -165,11 +165,24 @@ public class PlatformView extends SurfaceView implements Runnable {
                                 //hit by drone
                                 sm.playSound("player_burn.ogg");
                                 ps.loseLife();
-                                location = new PointF(ps.landLocation().x, ps.landLocation().y);
+                                location = new PointF(ps.loadLocation().x, ps.loadLocation().y);
                                 lm.player.setWorldLocationX(location.x);
                                 lm.player.setWorldLocationY(location.y);
                                 lm.player.setxVelocity(0);
                                 break;
+
+                            case 'g':
+                                //hit by guard
+                                sm.playSound("player_burn");
+                                ps.loseLife();
+                                location = new PointF(ps.loadLocation().x,
+                                        ps.loadLocation().y);
+
+                                lm.player.setWorldLocationX(location.x);
+                                lm.player.setWorldLocationY(location.y);
+                                lm.player.setxVelocity(0);
+                                break;
+
 
                             default://probably a reg tile
                                 if(hit == 1){//left or right
@@ -184,6 +197,40 @@ public class PlatformView extends SurfaceView implements Runnable {
 
                         }
                     }
+
+                    //check bullet collisions
+                    for (int i = 0; i < lm.player.bfg.getNumBullets(); i++){
+                        //make a hitbox out of the current bullet
+                        RectHitbox r = new RectHitbox();
+                        r.setLeft(lm.player.bfg.getBulletX(i));
+                        r.setTop(lm.player.bfg.getBulletY(i));
+                        r.setRight(lm.player.bfg.getBulletX(i) + .1f);
+                        r.setBottom(lm.player.bfg.getBulletY(i) + .1f);
+
+                        if(go.getHitbox().intersects(r)){
+                            //collision detected
+                            //make bullet disappear until it
+                            //is respawned as a new bullet
+                            lm.player.bfg.hideBullet(i);
+
+                            //Now respond depending upon the type of object hit
+                            if(go.getType() != 'g' && go.getType() != 'd'){
+                                sm.playSound("richochet");
+                            }else if(go.getType() == 'g'){
+                                //knock the guard back
+                                go.setWorldLocationX(go.getWorldLocation().x +
+                                2 * (lm.player.bfg.getDirection(i)));
+
+                                sm.playSound("hit_guard");
+                            }else if (go.getType() == 'd'){
+                                //destroy the droid
+                                sm.playSound("explode");
+                                //permanently clip this drone
+                                go.setWorldLocation(-100,-100,0);
+                            }
+                        }
+                    }
+
                     if(lm.isPlaying()){
                         //run any unclipped updates
                         go.update(fps, lm.gravity);

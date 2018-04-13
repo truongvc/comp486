@@ -12,6 +12,7 @@ public class Grass extends GameObject {
         final float HEIGHT = 1;
         final float WIDTH = 1;
 
+        setTraversable();
         setHeight(HEIGHT);//1 meter tall
         setWidth(WIDTH);//1m wide
 

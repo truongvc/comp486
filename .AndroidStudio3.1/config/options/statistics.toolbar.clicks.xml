@@ -1,11 +1,12 @@
 <application>
   <component name="ToolbarClicksCollector">
     <counts>
-      <entry action="Run@MainToolbar" count="12" />
-      <entry action="SaveAll@MainToolbar" count="10" />
+      <entry action="Run@MainToolbar" count="13" />
+      <entry action="SaveAll@MainToolbar" count="15" />
       <entry action="com.android.tools.idea.fd.actions.HotswapAction@MainToolbar" count="1" />
       <entry action="com.intellij.build.AbstractViewManager$CloseBuildContentAction@BuildView" count="1" />
-      <entry action="com.intellij.find.editorHeaderActions.NextOccurrenceAction@EditorToolbar" count="14" />
+      <entry action="com.intellij.find.SearchTextArea$ClearAction@unknown" count="1" />
+      <entry action="com.intellij.find.editorHeaderActions.NextOccurrenceAction@EditorToolbar" count="16" />
       <entry action="com.intellij.find.editorHeaderActions.PrevOccurrenceAction@EditorToolbar" count="13" />
       <entry action="com.intellij.ide.actions.NextOccurenceToolbarAction@BuildResults" count="1" />
     </counts>

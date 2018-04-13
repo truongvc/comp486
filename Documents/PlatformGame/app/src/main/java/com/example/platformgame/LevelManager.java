@@ -45,6 +45,9 @@ public class LevelManager {
         // Load all the GameObjects and Bitmaps
         loadMapData(context, pixelsPerMetre, px, py);
 
+        //set waypoints for our guards
+        setWaypoints();
+
         // Ready to play overwritten by switch playing status
         //playing = true;
     }
@@ -95,6 +98,10 @@ public class LevelManager {
                 index = 6;
                 break;
 
+            case 'g':
+                index = 7;
+                break;
+
             default:
                 index = 0;
                 break;
@@ -136,6 +143,10 @@ public class LevelManager {
 
             case 'd':
                 index = 6;
+                break;
+
+            case 'g':
+                index = 7;
                 break;
 
             default:
@@ -204,6 +215,11 @@ public class LevelManager {
                             gameObjects.add(new Drone(j,i,c));
                             break;
 
+                        case 'g':
+                            //add a guard to the gameobjects
+                            gameObjects.add(new Guard(context,j,i,c,pixelsPerMetre));
+                            break;
+
                     }
 
                     // If the bitmap isn't prepared yet
@@ -222,4 +238,70 @@ public class LevelManager {
         }
     }
 
-}
+    public void setWaypoints() {
+        //loop through all game objects looking for guards
+        for (GameObject guard : this.gameObjects) {
+            if (guard.getType() == 'g') {
+                //set waypoints for this guard
+                //find the tile beneath the guard
+                //this relies on the designer putting
+                //the guard in sensible location
+
+                int startTileIndex = -1;
+                int startGuardIndes = 0;
+                float waypointX1 = -1;
+                float waypointX2 = -1;
+
+                for (GameObject tile : this.gameObjects) {
+                    startTileIndex++;
+                    if (tile.getWorldLocation().y == guard.getWorldLocation().y
+                            + 2) {
+                        //tile is two spaces below current guard
+                        //now see if has same x coordinate
+                        if (tile.getWorldLocation().x == guard.getWorldLocation().x) {
+                            //found the tile the guard is standing on
+                            //now go left as far as possible
+                            //before non traversable tile is found
+                            //either on guards row or tile row
+                            //upto a maximum of 5 tiles.
+                            // 5 is an arbitrary value you can change to suit you
+
+                            for (int i = 0; i < 5; i++) {//left for loop
+                                if (!gameObjects.get(startTileIndex - i).isTraversable()) {
+                                    //set the left waypoint
+                                    waypointX1 = gameObjects.get(startTileIndex -
+                                            (i + 1)).getWorldLocation().x;
+                                    break;//leave left for loop
+                                } else {
+                                    //set to max 5 tiles as
+                                    // no non traversible found
+                                    waypointX1 = gameObjects.get(startTileIndex -
+                                            5).getWorldLocation().x;
+                                }
+                            }//end left
+
+                            for (int i = 0; i < 5; i++) {//right for loop
+                                if (!gameObjects.get(startTileIndex +
+                                        i).isTraversable()) {
+
+                                    //set the right waypoint
+                                    waypointX2 = gameObjects.get((startTileIndex +
+                                            (i - 1))).getWorldLocation().x;
+                                    break;//leave right for loop
+                                } else {
+                                    //set to max 5 tiles away
+                                    waypointX2 = gameObjects.get(startTileIndex +
+                                            5).getWorldLocation().x;
+                                }
+                            }//end right waypoint
+
+                            Guard g = (Guard) guard;
+                            g.setWaypoints(waypointX1, waypointX2);
+                        }//end if
+                    }
+                }
+            }
+        }
+    }//end set waypoint
+
+}//end class

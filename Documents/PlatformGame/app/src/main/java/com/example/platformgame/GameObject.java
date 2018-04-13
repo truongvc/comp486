@@ -34,7 +34,16 @@ public abstract class GameObject {
 
     private String bitmapName;
 
+    private boolean traversable = false;
+
     public abstract void update(long fps, float gravity);
+
+    public void setTraversable(){
+        traversable = true;
+    }
+    public boolean isTraversable(){
+        return traversable;
+    }
 
     public void setAnimFps(int animFps){
         this.animFps = animFps;
