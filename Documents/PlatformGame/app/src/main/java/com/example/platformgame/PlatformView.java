@@ -183,6 +183,16 @@ public class PlatformView extends SurfaceView implements Runnable {
                                 lm.player.setxVelocity(0);
                                 break;
 
+                            case 'f':
+                                sm.playSound("player_burn");
+                                ps.loseLife();
+                                location = new PointF(ps.loadLocation().x,
+                                        ps.loadLocation().y);
+                                lm.player.setWorldLocationX(location.x);
+                                lm.player.setWorldLocationY(location.y);
+                                lm.player.setxVelocity(0);
+                                break;
+
 
                             default://probably a reg tile
                                 if(hit == 1){//left or right

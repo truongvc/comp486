@@ -102,6 +102,29 @@ public class LevelManager {
                 index = 7;
                 break;
 
+            case 'f':
+                index = 8;
+                break;
+
+            case '2':
+                index = 9;
+                break;
+            case '3':
+                index = 10;
+                break;
+            case '4':
+                index = 11;
+                break;
+            case '5':
+                index = 12;
+                break;
+            case '6':
+                index = 13;
+                break;
+            case '7':
+                index = 14;
+                break;
+
             default:
                 index = 0;
                 break;
@@ -149,6 +172,28 @@ public class LevelManager {
                 index = 7;
                 break;
 
+            case 'f':
+                index = 8;
+                break;
+
+            case '2':
+                index = 9;
+                break;
+            case '3':
+                index = 10;
+                break;
+            case '4':
+                index = 11;
+                break;
+            case '5':
+                index = 12;
+                break;
+            case '6':
+                index = 13;
+                break;
+            case '7':
+                index = 14;
+                break;
             default:
                 index = 0;
                 break;
@@ -220,6 +265,34 @@ public class LevelManager {
                             gameObjects.add(new Guard(context,j,i,c,pixelsPerMetre));
                             break;
 
+                        case 'f':
+                            //add a fire tile to gameobjects
+                            gameObjects.add(new Fire(context,j,i,c,pixelsPerMetre));
+                            break;
+                        case '2':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Snow(j, i, c));
+                            break;
+                        case '3':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Brick(j, i, c));
+                            break;
+                        case '4':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Coal(j, i, c));
+                            break;
+                        case '5':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Concrete(j, i, c));
+                            break;
+                        case '6':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Scorched(j, i, c));
+                            break;
+                        case '7':
+// Add a tile to the gameObjects
+                            gameObjects.add(new Stone(j, i, c));
+                            break;
                     }
 
                     // If the bitmap isn't prepared yet
