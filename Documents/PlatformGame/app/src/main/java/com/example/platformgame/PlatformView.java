@@ -60,7 +60,7 @@ public class PlatformView extends SurfaceView implements Runnable {
 
         ps = new PlayerState();
 
-        loadLevel("LevelCave", 15, 2);
+        loadLevel("LevelCave", 1, 16);
     }
 
     public void loadLevel(String level, float px, float py) {
@@ -75,6 +75,8 @@ public class PlatformView extends SurfaceView implements Runnable {
         PointF location = new PointF(px,py);
         ps.saveLocation(location);
 
+        //reload the players current fire rate from the player state
+        lm.player.bfg.setFirerate(ps.getFireRate());
         //set the players location as the world centre of the viewport
         vp.setWorldCentre(lm.gameObjects.get(lm.playerIndex)
                         .getWorldLocation().x,
@@ -193,6 +195,12 @@ public class PlatformView extends SurfaceView implements Runnable {
                                 lm.player.setxVelocity(0);
                                 break;
 
+                            case 't':
+                                Teleport teleport = (Teleport) go;
+                                Location t = teleport.getTarget();
+                                loadLevel(t.level, t.x, t.y);
+                                sm.playSound("teleport");
+                                break;
 
                             default://probably a reg tile
                                 if(hit == 1){//left or right
@@ -265,6 +273,25 @@ public class PlatformView extends SurfaceView implements Runnable {
             //reset the players location as the center of the viewport
             vp.setWorldCentre(lm.gameObjects.get(lm.playerIndex).getWorldLocation().x,
                     lm.gameObjects.get(lm.playerIndex).getWorldLocation().y);
+
+            //has player fallen out of the map
+            if(lm.player.getWorldLocation().x < 0 ||
+                    lm.player.getWorldLocation().x > lm.mapWidth ||
+                    lm.player.getWorldLocation().y > lm.mapHeight){
+                sm.playSound("player_burn");
+                ps.loseLife();
+                PointF location = new PointF(ps.loadLocation().x, ps.loadLocation().y);
+
+                lm.player.setWorldLocationX(location.x);
+                lm.player.setWorldLocationY(location.y);
+                lm.player.setxVelocity(0);
+            }
+
+            //check if game is over
+            if(ps.getLives() == 0){
+                ps = new PlayerState();
+                loadLevel("LevelCave",1,16);
+            }
         }
 
     }//end update
@@ -278,6 +305,9 @@ public class PlatformView extends SurfaceView implements Runnable {
             // Rub out the last frame with arbitrary color
             paint.setColor(Color.argb(255, 0, 0, 255));
             canvas.drawColor(Color.argb(255, 0, 0, 255));
+
+            //draw parallax backgrounds from -1 to -3
+            drawBackground(0,-3);
 
             // Draw all the GameObjects
             Rect toScreen2d = new Rect();
@@ -333,6 +363,41 @@ public class PlatformView extends SurfaceView implements Runnable {
                         lm.player.bfg.getBulletY(i),.25f,.05f));
                 canvas.drawRect(toScreen2d, paint);
             }
+            //draw parallax backgrounds from layer 1 - 3
+            drawBackground(4,0);
+
+            //draw the HUD
+            //this code needs bitmaps: extra life, upgrade and coin
+            //therefore there must be at least one of each in the level
+
+            int topSpace = vp.getPixelsPerMetreY() / 4;
+            int iconSize = vp.getPixelsPerMetreX();
+            int padding = vp.getPixelsPerMetreX() / 5;
+            int centering = vp.getPixelsPerMetreY() / 6;
+            paint.setTextSize(vp.getPixelsPerMetreY()/2);
+            paint.setTextAlign(Paint.Align.CENTER);
+
+            paint.setColor(Color.argb(100,0,0,0));
+            canvas.drawRect(0,0,iconSize * 7.0f, topSpace * 2 + iconSize, paint);
+            paint.setColor(Color.argb(255,255,255,0));
+
+            canvas.drawBitmap(lm.getBitmap('e'),0,topSpace,paint);
+
+            canvas.drawText("" + ps.getLives(), (iconSize * 1) + padding,
+                    (iconSize) - centering, paint);
+
+            canvas.drawBitmap(lm.getBitmap('c'),(iconSize * 2.5f) + padding,
+                    topSpace,paint);
+
+            canvas.drawText("" + ps.getCredits(), (iconSize * 3.5f) + padding * 2,
+                    (iconSize)-centering, paint);
+
+            canvas.drawBitmap(lm.getBitmap('u'),(iconSize * 5.0f) + padding,
+                    topSpace, paint);
+
+            canvas.drawText("" + ps.getFireRate(), (iconSize * 6.0f) + padding * 2,
+                    (iconSize) - centering, paint);
+
             // Text for debugging
             if (debugging) {
                 paint.setTextSize(16);
@@ -412,4 +477,55 @@ public class PlatformView extends SurfaceView implements Runnable {
         gameThread.start();
     }
 
+    private void drawBackground(int start, int stop){
+        Rect fromRect1 = new Rect();
+        Rect toRect1 = new Rect();
+        Rect fromRect2 = new Rect();
+        Rect toRect2 = new Rect();
+
+        for (Background bg: lm.backgrounds){
+            if(bg.z < start && bg.z > stop){
+                //is this in layer in the viewport?
+                //clip anything off screen
+                if(!vp.clipObjects(-1,bg.y,1000,bg.height)){
+                    float floatstartY = ((vp.getyCentre() -
+                            ((vp.getViewortWorldCentreY() - bg.y) * vp.getPixelsPerMetreY())));
+
+                    int startY = (int) floatstartY;
+
+                    float floatendY = ((vp.getyCentre() -
+                            ((vp.getViewortWorldCentreY() - bg.endY) * vp.getPixelsPerMetreY())));
+
+                    int endY = (int) floatendY;
+
+                    //define what protion of bitmaps to capture and what coordinates to draw
+                    //them at
+                    fromRect1 = new Rect(0,0,bg.width - bg.xClip, bg.height);
+
+                    toRect1 = new Rect(bg.xClip, startY, bg.xClip, endY);
+                }//end if(!vp.clipobjects.....
+
+                //draw backgrounds
+                if(!bg.reversedFirst){
+                    canvas.drawBitmap(bg.bitmap,fromRect1,toRect1,paint);
+                    canvas.drawBitmap(bg.bitmapReversed, fromRect2, toRect2, paint);
+                } else {
+                    canvas.drawBitmap(bg.bitmap, fromRect2, toRect2, paint);
+                    canvas.drawBitmap(bg.bitmapReversed, fromRect1, toRect1, paint);
+                }
+
+                //calculate the next value for the background's clipping position by modifying
+                //xClip and switching which background is drawn first, if necessary.
+                bg.xClip -= lm.player.getxVelocity() / (20/bg.speed);
+                if(bg.xClip >= bg.width){
+                    bg.xClip = 0;
+                    bg.reversedFirst = !bg.reversedFirst;
+                }
+                else if(bg.xClip <= 0) {
+                    bg.xClip = bg.width;
+                    bg.reversedFirst = !bg.reversedFirst;
+                }
+            }
+        }
+    }
 }// End of PlatformView

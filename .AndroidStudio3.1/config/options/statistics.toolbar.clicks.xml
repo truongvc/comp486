@@ -1,8 +1,8 @@
 <application>
   <component name="ToolbarClicksCollector">
     <counts>
-      <entry action="Run@MainToolbar" count="13" />
-      <entry action="SaveAll@MainToolbar" count="15" />
+      <entry action="Run@MainToolbar" count="19" />
+      <entry action="SaveAll@MainToolbar" count="19" />
       <entry action="com.android.tools.idea.fd.actions.HotswapAction@MainToolbar" count="1" />
       <entry action="com.intellij.build.AbstractViewManager$CloseBuildContentAction@BuildView" count="1" />
       <entry action="com.intellij.find.SearchTextArea$ClearAction@unknown" count="1" />

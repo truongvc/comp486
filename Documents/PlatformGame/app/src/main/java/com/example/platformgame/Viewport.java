@@ -58,6 +58,19 @@ public class Viewport {
         return  pixelsPerMetreX;
     }
 
+    public int getPixelsPerMetreY(){
+        return pixelsPerMetreY;
+    }
+
+    public int getyCentre(){
+        return screenCentreY;
+    }
+
+    public float getViewortWorldCentreY(){
+        return currentViewportWorldCentre.y;
+    }
+
+
     public Rect worldToScreen(float objectX, float objectY, float objectWidth, float objectHeight){
         int left = (int) (screenCentreX - ((currentViewportWorldCentre.x - objectX) * pixelsPerMetreX));
         int top =  (int) (screenCentreY - ((currentViewportWorldCentre.y - objectY) * pixelsPerMetreY));
@@ -98,6 +111,31 @@ public class Viewport {
 
         numClipped = 0;
     }
+
+    public void moveViewportRight(int maxWidth){
+        if(currentViewportWorldCentre.x < maxWidth - (metresToShowX/2) + 3){
+            currentViewportWorldCentre.x += 1;
+        }
+    }
+
+    public void moveViewportLeft(){
+        if(currentViewportWorldCentre.x > (metresToShowX/2) - 3){
+            currentViewportWorldCentre.x -= 1;
+        }
+    }
+
+    public void moveViewportUp(){
+        if(currentViewportWorldCentre.y > (metresToShowY/2) - 3){
+            currentViewportWorldCentre.y -= 1;
+        }
+    }
+
+    public void moveViewportDown(int maxHieght){
+        if(currentViewportWorldCentre.y < maxHieght - (metresToShowY/2) + 3){
+            currentViewportWorldCentre.y += 1;
+        }
+    }
+
 
 }
 
