@@ -1,9 +1,16 @@
 <application>
   <component name="MainMenuCollector">
     <counts>
-      <entry path="File -&gt; Open..." count="2" />
+      <entry path="Edit -&gt; Find -&gt; Replace..." count="2" />
+      <entry path="File -&gt; New -&gt; Fragment -&gt; Fragment (Blank)" count="1" />
+      <entry path="File -&gt; New -&gt; Import Project..." count="2" />
+      <entry path="File -&gt; New -&gt; Import Sample..." count="2" />
+      <entry path="File -&gt; New -&gt; New Project..." count="2" />
+      <entry path="File -&gt; Open Recent -&gt; Reopen Project" count="4" />
+      <entry path="File -&gt; Open..." count="4" />
       <entry path="VCS -&gt; Commit" count="6" />
-      <entry path="VCS -&gt; Git -&gt; Branches..." count="2" />
+      <entry path="VCS -&gt; Git -&gt; Branches..." count="10" />
+      <entry path="VCS -&gt; Git -&gt; Pull..." count="5" />
     </counts>
   </component>
 </application>

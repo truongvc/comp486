@@ -1,46 +1,80 @@
 <application>
   <component name="ActionsCollector">
     <counts>
+      <entry action="$Delete" count="3" />
       <entry action="$Paste" count="1" />
-      <entry action="$Undo" count="15" />
-      <entry action="Android.CreateResourceDirectory" count="2" />
-      <entry action="CheckinProject" count="6" />
-      <entry action="EditorBackSpace" count="1053" />
-      <entry action="EditorChooseLookupItem" count="849" />
-      <entry action="EditorCopy" count="11" />
-      <entry action="EditorCut" count="3" />
-      <entry action="EditorDelete" count="131" />
+      <entry action="$SelectAll" count="1" />
+      <entry action="$Undo" count="32" />
+      <entry action="Android Lint Quick Fixes" count="1" />
+      <entry action="Android Profiler" count="1" />
+      <entry action="Android.CreateResourceDirectory" count="3" />
+      <entry action="Android.RunAndroidSdkManager" count="1" />
+      <entry action="CheckinProject" count="7" />
+      <entry action="Create switch statement" count="1" />
+      <entry action="EditorBackSpace" count="3025" />
+      <entry action="EditorChooseLookupItem" count="1499" />
+      <entry action="EditorCodeBlockEnd" count="1" />
+      <entry action="EditorCopy" count="26" />
+      <entry action="EditorCut" count="5" />
+      <entry action="EditorDelete" count="218" />
       <entry action="EditorDeleteLine" count="18" />
-      <entry action="EditorDown" count="2308" />
-      <entry action="EditorDownWithSelection" count="5" />
-      <entry action="EditorEnter" count="783" />
-      <entry action="EditorEscape" count="1" />
-      <entry action="EditorLeft" count="406" />
-      <entry action="EditorLeftWithSelection" count="69" />
-      <entry action="EditorLineEnd" count="305" />
-      <entry action="EditorLineEndWithSelection" count="5" />
-      <entry action="EditorLineStart" count="34" />
-      <entry action="EditorLineStartWithSelection" count="8" />
-      <entry action="EditorPaste" count="56" />
-      <entry action="EditorRight" count="233" />
-      <entry action="EditorRightWithSelection" count="2" />
-      <entry action="EditorStartNewLine" count="5" />
-      <entry action="EditorTab" count="30" />
-      <entry action="EditorUp" count="766" />
-      <entry action="EditorUpWithSelection" count="43" />
-      <entry action="Find" count="5" />
-      <entry action="Git.Branches" count="2" />
-      <entry action="Import class" count="2" />
-      <entry action="NewClass" count="24" />
+      <entry action="EditorDeleteToWordStart" count="1" />
+      <entry action="EditorDown" count="2848" />
+      <entry action="EditorDownWithSelection" count="11" />
+      <entry action="EditorEnter" count="1712" />
+      <entry action="EditorEscape" count="3" />
+      <entry action="EditorIndentSelection" count="2" />
+      <entry action="EditorLeft" count="989" />
+      <entry action="EditorLeftWithSelection" count="155" />
+      <entry action="EditorLineEnd" count="529" />
+      <entry action="EditorLineEndWithSelection" count="14" />
+      <entry action="EditorLineStart" count="51" />
+      <entry action="EditorLineStartWithSelection" count="14" />
+      <entry action="EditorPaste" count="205" />
+      <entry action="EditorRight" count="391" />
+      <entry action="EditorRightWithSelection" count="29" />
+      <entry action="EditorStartNewLine" count="8" />
+      <entry action="EditorTab" count="43" />
+      <entry action="EditorTextEnd" count="1" />
+      <entry action="EditorUp" count="987" />
+      <entry action="EditorUpWithSelection" count="46" />
+      <entry action="ExternalSystem.RefreshAllProjects" count="1" />
+      <entry action="Find" count="8" />
+      <entry action="FindInPath" count="1" />
+      <entry action="FindUsages" count="4" />
+      <entry action="Git.Branches" count="10" />
+      <entry action="Git.Pull" count="5" />
+      <entry action="GoogleCloudTools.SampleImport" count="2" />
+      <entry action="GotoDeclaration" count="4" />
+      <entry action="GotoLine" count="1" />
+      <entry action="HideAllWindows" count="1" />
+      <entry action="Import class" count="15" />
+      <entry action="Import static constant  com.example.c9asteroids.GLManager.COMPONENTS_PER_VERTEX " count="1" />
+      <entry action="Import static constant  com.example.c9asteroids.GLManager.FLOAT_SIZE " count="1" />
+      <entry action="Import static method  android.opengl.GLES20.glEnableVertexAttribArray " count="1" />
+      <entry action="Import static method  android.opengl.GLES20.glGetAttribLocation " count="1" />
+      <entry action="Import static method  android.opengl.GLES20.glGetUniformLocation " count="1" />
+      <entry action="Import static method  android.opengl.GLES20.glUniform4f " count="1" />
+      <entry action="Import static method  android.opengl.GLES20.glVertexAttribPointer " count="1" />
+      <entry action="Import static method..." count="1" />
+      <entry action="ImportProject" count="2" />
+      <entry action="NewClass" count="42" />
+      <entry action="NewDir" count="1" />
+      <entry action="NewProject" count="2" />
       <entry action="NextTemplateVariable" count="1" />
-      <entry action="OpenFile" count="2" />
+      <entry action="OpenFile" count="4" />
       <entry action="QuickJavaDoc" count="1" />
       <entry action="RenameElement" count="2" />
-      <entry action="RevealIn" count="4" />
-      <entry action="Run" count="19" />
-      <entry action="SaveAll" count="50" />
+      <entry action="RenameFile" count="3" />
+      <entry action="Replace" count="2" />
+      <entry action="RevealIn" count="5" />
+      <entry action="Run" count="43" />
+      <entry action="SaveAll" count="78" />
       <entry action="SearchEverywhere" count="1" />
-      <entry action="ShowIntentionActions" count="5" />
+      <entry action="ShowIntentionActions" count="61" />
+      <entry action="Stop" count="1" />
+      <entry action="ToggleLineBreakpoint" count="1" />
+      <entry action="template.create.FragmentFragment (Blank)" count="1" />
     </counts>
   </component>
 </application>
