@@ -9,10 +9,10 @@
       <entry action="Android Profiler" count="1" />
       <entry action="Android.CreateResourceDirectory" count="3" />
       <entry action="Android.RunAndroidSdkManager" count="1" />
-      <entry action="CheckinProject" count="8" />
-      <entry action="CommentByLineComment" count="3" />
+      <entry action="CheckinProject" count="9" />
+      <entry action="CommentByLineComment" count="4" />
       <entry action="Create switch statement" count="1" />
-      <entry action="EditorBackSpace" count="3233" />
+      <entry action="EditorBackSpace" count="3247" />
       <entry action="EditorChooseLookupItem" count="1540" />
       <entry action="EditorCodeBlockEnd" count="1" />
       <entry action="EditorCopy" count="30" />
@@ -68,13 +68,15 @@
       <entry action="RenameElement" count="3" />
       <entry action="RenameFile" count="3" />
       <entry action="Replace" count="2" />
-      <entry action="RevealIn" count="6" />
+      <entry action="RevealIn" count="7" />
       <entry action="Run" count="57" />
       <entry action="SaveAll" count="82" />
       <entry action="SearchEverywhere" count="1" />
       <entry action="ShowIntentionActions" count="64" />
       <entry action="Stop" count="1" />
       <entry action="ToggleLineBreakpoint" count="1" />
+      <entry action="Vcs.Log.ShowLongEdges" count="1" />
+      <entry action="Vcs.UpdateProject" count="1" />
       <entry action="template.create.FragmentFragment (Blank)" count="1" />
     </counts>
   </component>

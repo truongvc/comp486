@@ -62,36 +62,36 @@ public class Viewport {
         return convertedRect;
     }
 
-    public boolean clipObjects(float objectX, float objectY, float objectWidth, float objectHeight) {
-        boolean clipped = true;
-
-        if (objectX - objectWidth < currentViewportWorldCentre.x + (metresToShowX / 2)) {
-            if (objectX + objectWidth> currentViewportWorldCentre.x - (metresToShowX / 2)) {
-                if (objectY - objectHeight< currentViewportWorldCentre.y + (metresToShowY / 2)) {
-                    if (objectY + objectHeight > currentViewportWorldCentre.y - (metresToShowY / 2)){
-                        clipped = false;
-                    }
-
-                }
-            }
-        }
-
-        //for debugging
-        if(clipped){
-            numClipped++;
-        }
-
-        return clipped;
-    }
-
-    public int getNumClipped(){
-
-        return numClipped;
-    }
-
-    public void resetNumClipped(){
-
-        numClipped = 0;
-    }
+//    public boolean clipObjects(float objectX, float objectY, float objectWidth, float objectHeight) {
+//        boolean clipped = true;
+//
+//        if (objectX - objectWidth < currentViewportWorldCentre.x + (metresToShowX / 2)) {
+//            if (objectX + objectWidth> currentViewportWorldCentre.x - (metresToShowX / 2)) {
+//                if (objectY - objectHeight< currentViewportWorldCentre.y + (metresToShowY / 2)) {
+//                    if (objectY + objectHeight > currentViewportWorldCentre.y - (metresToShowY / 2)){
+//                        clipped = false;
+//                    }
+//
+//                }
+//            }
+//        }
+//
+//        //for debugging
+//        if(clipped){
+//            numClipped++;
+//        }
+//
+//        return clipped;
+//    }
+//
+//    public int getNumClipped(){
+//
+//        return numClipped;
+//    }
+//
+//    public void resetNumClipped(){
+//
+//        numClipped = 0;
+//    }
 }
 
