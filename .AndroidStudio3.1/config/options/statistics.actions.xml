@@ -4,51 +4,52 @@
       <entry action="$Delete" count="3" />
       <entry action="$Paste" count="1" />
       <entry action="$SelectAll" count="1" />
-      <entry action="$Undo" count="32" />
+      <entry action="$Undo" count="78" />
       <entry action="Android Lint Quick Fixes" count="1" />
       <entry action="Android Profiler" count="1" />
       <entry action="Android.CreateResourceDirectory" count="3" />
       <entry action="Android.RunAndroidSdkManager" count="1" />
-      <entry action="CheckinProject" count="7" />
+      <entry action="CheckinProject" count="8" />
+      <entry action="CommentByLineComment" count="3" />
       <entry action="Create switch statement" count="1" />
-      <entry action="EditorBackSpace" count="3025" />
-      <entry action="EditorChooseLookupItem" count="1499" />
+      <entry action="EditorBackSpace" count="3233" />
+      <entry action="EditorChooseLookupItem" count="1540" />
       <entry action="EditorCodeBlockEnd" count="1" />
-      <entry action="EditorCopy" count="26" />
-      <entry action="EditorCut" count="5" />
-      <entry action="EditorDelete" count="218" />
-      <entry action="EditorDeleteLine" count="18" />
+      <entry action="EditorCopy" count="30" />
+      <entry action="EditorCut" count="10" />
+      <entry action="EditorDelete" count="270" />
+      <entry action="EditorDeleteLine" count="245" />
       <entry action="EditorDeleteToWordStart" count="1" />
-      <entry action="EditorDown" count="2848" />
-      <entry action="EditorDownWithSelection" count="11" />
-      <entry action="EditorEnter" count="1712" />
+      <entry action="EditorDown" count="3017" />
+      <entry action="EditorDownWithSelection" count="30" />
+      <entry action="EditorEnter" count="1799" />
       <entry action="EditorEscape" count="3" />
-      <entry action="EditorIndentSelection" count="2" />
-      <entry action="EditorLeft" count="989" />
+      <entry action="EditorIndentSelection" count="5" />
+      <entry action="EditorLeft" count="1155" />
       <entry action="EditorLeftWithSelection" count="155" />
-      <entry action="EditorLineEnd" count="529" />
-      <entry action="EditorLineEndWithSelection" count="14" />
-      <entry action="EditorLineStart" count="51" />
-      <entry action="EditorLineStartWithSelection" count="14" />
-      <entry action="EditorPaste" count="205" />
-      <entry action="EditorRight" count="391" />
-      <entry action="EditorRightWithSelection" count="29" />
+      <entry action="EditorLineEnd" count="546" />
+      <entry action="EditorLineEndWithSelection" count="17" />
+      <entry action="EditorLineStart" count="60" />
+      <entry action="EditorLineStartWithSelection" count="15" />
+      <entry action="EditorPaste" count="238" />
+      <entry action="EditorRight" count="458" />
+      <entry action="EditorRightWithSelection" count="86" />
       <entry action="EditorStartNewLine" count="8" />
-      <entry action="EditorTab" count="43" />
+      <entry action="EditorTab" count="66" />
       <entry action="EditorTextEnd" count="1" />
-      <entry action="EditorUp" count="987" />
+      <entry action="EditorUp" count="1069" />
       <entry action="EditorUpWithSelection" count="46" />
       <entry action="ExternalSystem.RefreshAllProjects" count="1" />
-      <entry action="Find" count="8" />
+      <entry action="Find" count="9" />
       <entry action="FindInPath" count="1" />
-      <entry action="FindUsages" count="4" />
+      <entry action="FindUsages" count="5" />
       <entry action="Git.Branches" count="10" />
       <entry action="Git.Pull" count="5" />
       <entry action="GoogleCloudTools.SampleImport" count="2" />
       <entry action="GotoDeclaration" count="4" />
       <entry action="GotoLine" count="1" />
       <entry action="HideAllWindows" count="1" />
-      <entry action="Import class" count="15" />
+      <entry action="Import class" count="16" />
       <entry action="Import static constant  com.example.c9asteroids.GLManager.COMPONENTS_PER_VERTEX " count="1" />
       <entry action="Import static constant  com.example.c9asteroids.GLManager.FLOAT_SIZE " count="1" />
       <entry action="Import static method  android.opengl.GLES20.glEnableVertexAttribArray " count="1" />
@@ -58,20 +59,20 @@
       <entry action="Import static method  android.opengl.GLES20.glVertexAttribPointer " count="1" />
       <entry action="Import static method..." count="1" />
       <entry action="ImportProject" count="2" />
-      <entry action="NewClass" count="42" />
+      <entry action="NewClass" count="51" />
       <entry action="NewDir" count="1" />
       <entry action="NewProject" count="2" />
-      <entry action="NextTemplateVariable" count="1" />
+      <entry action="NextTemplateVariable" count="2" />
       <entry action="OpenFile" count="4" />
       <entry action="QuickJavaDoc" count="1" />
-      <entry action="RenameElement" count="2" />
+      <entry action="RenameElement" count="3" />
       <entry action="RenameFile" count="3" />
       <entry action="Replace" count="2" />
-      <entry action="RevealIn" count="5" />
-      <entry action="Run" count="43" />
-      <entry action="SaveAll" count="78" />
+      <entry action="RevealIn" count="6" />
+      <entry action="Run" count="57" />
+      <entry action="SaveAll" count="82" />
       <entry action="SearchEverywhere" count="1" />
-      <entry action="ShowIntentionActions" count="61" />
+      <entry action="ShowIntentionActions" count="64" />
       <entry action="Stop" count="1" />
       <entry action="ToggleLineBreakpoint" count="1" />
       <entry action="template.create.FragmentFragment (Blank)" count="1" />

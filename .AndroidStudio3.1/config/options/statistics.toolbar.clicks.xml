@@ -4,18 +4,19 @@
       <entry action="$Undo@MainToolbar" count="3" />
       <entry action="Android Profiler@MainToolbar" count="1" />
       <entry action="Android.RunAndroidSdkManager@MainToolbar" count="1" />
+      <entry action="CheckinProject@MainToolbar" count="1" />
       <entry action="ExternalSystem.RefreshAllProjects@Gradle View Toolbar" count="1" />
       <entry action="Find@MainToolbar" count="1" />
-      <entry action="Run@MainToolbar" count="43" />
-      <entry action="SaveAll@MainToolbar" count="31" />
+      <entry action="Run@MainToolbar" count="57" />
+      <entry action="SaveAll@MainToolbar" count="35" />
       <entry action="Stop@MainToolbar" count="1" />
       <entry action="com.android.tools.idea.common.actions.SetZoomAction@NlRhsConfigToolbar" count="3" />
       <entry action="com.android.tools.idea.configurations.TargetMenuAction@toolbar" count="2" />
-      <entry action="com.android.tools.idea.fd.actions.HotswapAction@MainToolbar" count="8" />
+      <entry action="com.android.tools.idea.fd.actions.HotswapAction@MainToolbar" count="16" />
       <entry action="com.intellij.build.AbstractViewManager$CloseBuildContentAction@BuildView" count="1" />
-      <entry action="com.intellij.find.SearchTextArea$ClearAction@unknown" count="4" />
+      <entry action="com.intellij.find.SearchTextArea$ClearAction@unknown" count="6" />
       <entry action="com.intellij.find.editorHeaderActions.FindAllAction@EditorToolbar" count="2" />
-      <entry action="com.intellij.find.editorHeaderActions.NextOccurrenceAction@EditorToolbar" count="16" />
+      <entry action="com.intellij.find.editorHeaderActions.NextOccurrenceAction@EditorToolbar" count="20" />
       <entry action="com.intellij.find.editorHeaderActions.PrevOccurrenceAction@EditorToolbar" count="13" />
       <entry action="com.intellij.ide.actions.NextOccurenceToolbarAction@BuildResults" count="1" />
       <entry action="com.intellij.notification.EventLogConsole$ClearLogAction@EventLog" count="1" />
