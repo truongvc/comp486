@@ -16,8 +16,11 @@ public class Player extends GameObject {
         // In chapter 6.
         setBitmapName("player");
         // X and y locations from constructor parameters
-        setWorldLocation(worldStartX, worldStartY, 0);
+        // TODO: 5/15/2018  camera follows start point must fix should start point be random?
+       // setWorldLocation(worldStartX, worldStartY, 0);
+        setWorldLocation(5,5, 0);
     }
+
     public void update(long fps, float gravity) {
     }
 }

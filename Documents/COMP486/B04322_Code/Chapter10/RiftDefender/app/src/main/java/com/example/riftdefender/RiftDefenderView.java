@@ -50,7 +50,7 @@ public class RiftDefenderView extends SurfaceView implements Runnable{
         viewport = new Viewport(screenWidth, screenHeight);
 
         //load level
-        loadLevel("LevelOne",15,2);
+        loadLevel("LevelOne",15,5);
 
     }
 
@@ -65,10 +65,12 @@ public class RiftDefenderView extends SurfaceView implements Runnable{
         inputController = new InputController(viewport.getScreenWidth(), viewport.getScreenHeight());
 
         //set the players location as the world centre of the viewport
-        viewport.setWorldCentre(levelManager.gameObjects.get(levelManager.playerIndex)
-                        .getWorldLocation().x,
-                levelManager.gameObjects.get(levelManager.playerIndex)
-                        .getWorldLocation().y);
+//        viewport.setWorldCentre(levelManager.gameObjects.get(levelManager.playerIndex)
+//                        .getWorldLocation().x,
+//                levelManager.gameObjects.get(levelManager.playerIndex)
+//                        .getWorldLocation().y);
+        viewport.setWorldCentre(8,5);
+
     }
 
     public void run(){
@@ -135,8 +137,16 @@ public class RiftDefenderView extends SurfaceView implements Runnable{
                             canvas.drawBitmap(levelManager.bitmapsArray[levelManager.getBitmapIndex(go.getType())],
                                     toScreen2d.left,
                                     toScreen2d.top, paint);
-                        }
+                        paint.setTextSize(16);
+                       // paint.setTextAlign(Paint.Align.LEFT);
+                        paint.setColor(Color.argb(255, 255, 255, 255));
+                        canvas.drawText("x:" + go.getWorldLocation().x, toScreen2d.left,
+                                + toScreen2d.top, paint);
+                        canvas.drawText("y:" + go.getWorldLocation().y, toScreen2d.left+50,
+                                + toScreen2d.top, paint);
+
                     }
+            }
                     // Text for debugging
                     if (debugging) {
                         paint.setTextSize(16);

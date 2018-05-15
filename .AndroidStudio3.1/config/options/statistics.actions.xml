@@ -4,49 +4,54 @@
       <entry action="$Delete" count="3" />
       <entry action="$Paste" count="1" />
       <entry action="$SelectAll" count="1" />
-      <entry action="$Undo" count="78" />
+      <entry action="$Undo" count="117" />
       <entry action="Android Lint Quick Fixes" count="1" />
       <entry action="Android Profiler" count="1" />
       <entry action="Android.CreateResourceDirectory" count="3" />
       <entry action="Android.RunAndroidSdkManager" count="1" />
-      <entry action="CheckinProject" count="9" />
-      <entry action="CommentByLineComment" count="4" />
+      <entry action="CheckinProject" count="10" />
+      <entry action="CodeCompletion" count="2" />
+      <entry action="CommentByLineComment" count="13" />
       <entry action="Create switch statement" count="1" />
-      <entry action="EditorBackSpace" count="3247" />
-      <entry action="EditorChooseLookupItem" count="1540" />
+      <entry action="EditorBackSpace" count="3493" />
+      <entry action="EditorChooseLookupItem" count="1548" />
       <entry action="EditorCodeBlockEnd" count="1" />
-      <entry action="EditorCopy" count="30" />
-      <entry action="EditorCut" count="10" />
-      <entry action="EditorDelete" count="270" />
-      <entry action="EditorDeleteLine" count="245" />
+      <entry action="EditorCopy" count="38" />
+      <entry action="EditorCut" count="11" />
+      <entry action="EditorDelete" count="416" />
+      <entry action="EditorDeleteLine" count="259" />
       <entry action="EditorDeleteToWordStart" count="1" />
-      <entry action="EditorDown" count="3017" />
-      <entry action="EditorDownWithSelection" count="30" />
-      <entry action="EditorEnter" count="1799" />
-      <entry action="EditorEscape" count="3" />
+      <entry action="EditorDown" count="3104" />
+      <entry action="EditorDownWithSelection" count="50" />
+      <entry action="EditorEnter" count="1821" />
+      <entry action="EditorEscape" count="4" />
       <entry action="EditorIndentSelection" count="5" />
-      <entry action="EditorLeft" count="1155" />
-      <entry action="EditorLeftWithSelection" count="155" />
-      <entry action="EditorLineEnd" count="546" />
-      <entry action="EditorLineEndWithSelection" count="17" />
-      <entry action="EditorLineStart" count="60" />
+      <entry action="EditorLeft" count="1386" />
+      <entry action="EditorLeftWithSelection" count="245" />
+      <entry action="EditorLineEnd" count="560" />
+      <entry action="EditorLineEndWithSelection" count="29" />
+      <entry action="EditorLineStart" count="66" />
       <entry action="EditorLineStartWithSelection" count="15" />
-      <entry action="EditorPaste" count="238" />
-      <entry action="EditorRight" count="458" />
-      <entry action="EditorRightWithSelection" count="86" />
+      <entry action="EditorNextWord" count="1" />
+      <entry action="EditorPaste" count="251" />
+      <entry action="EditorPreviousWord" count="1" />
+      <entry action="EditorRight" count="772" />
+      <entry action="EditorRightWithSelection" count="90" />
+      <entry action="EditorScrollDown" count="1" />
+      <entry action="EditorScrollUp" count="1" />
       <entry action="EditorStartNewLine" count="8" />
-      <entry action="EditorTab" count="66" />
+      <entry action="EditorTab" count="72" />
       <entry action="EditorTextEnd" count="1" />
-      <entry action="EditorUp" count="1069" />
-      <entry action="EditorUpWithSelection" count="46" />
+      <entry action="EditorUp" count="1144" />
+      <entry action="EditorUpWithSelection" count="77" />
       <entry action="ExternalSystem.RefreshAllProjects" count="1" />
-      <entry action="Find" count="9" />
+      <entry action="Find" count="10" />
       <entry action="FindInPath" count="1" />
-      <entry action="FindUsages" count="5" />
+      <entry action="FindUsages" count="6" />
       <entry action="Git.Branches" count="10" />
       <entry action="Git.Pull" count="5" />
       <entry action="GoogleCloudTools.SampleImport" count="2" />
-      <entry action="GotoDeclaration" count="4" />
+      <entry action="GotoDeclaration" count="5" />
       <entry action="GotoLine" count="1" />
       <entry action="HideAllWindows" count="1" />
       <entry action="Import class" count="16" />
@@ -62,14 +67,14 @@
       <entry action="NewClass" count="51" />
       <entry action="NewDir" count="1" />
       <entry action="NewProject" count="2" />
-      <entry action="NextTemplateVariable" count="2" />
+      <entry action="NextTemplateVariable" count="3" />
       <entry action="OpenFile" count="4" />
       <entry action="QuickJavaDoc" count="1" />
       <entry action="RenameElement" count="3" />
       <entry action="RenameFile" count="3" />
       <entry action="Replace" count="2" />
       <entry action="RevealIn" count="7" />
-      <entry action="Run" count="57" />
+      <entry action="Run" count="59" />
       <entry action="SaveAll" count="82" />
       <entry action="SearchEverywhere" count="1" />
       <entry action="ShowIntentionActions" count="64" />

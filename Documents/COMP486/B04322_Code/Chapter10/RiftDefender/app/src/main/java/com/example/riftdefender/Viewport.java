@@ -12,9 +12,9 @@ public class Viewport {
     private int screenYResolution;
     private int screenCentreX;
     private int screenCentreY;
-    private int metresToShowX;
-    private int metresToShowY;
-    private int numClipped;
+//    private int metresToShowX;
+//    private int metresToShowY;
+//    private int numClipped;
     Viewport(int x, int y){
 
         screenXResolution = x;
@@ -26,8 +26,8 @@ public class Viewport {
         pixelsPerMetreX = screenXResolution / 16;
         pixelsPerMetreY = screenYResolution / 9;
 
-        metresToShowX = 8;
-        metresToShowY = 5;
+//        metresToShowX = 8;
+//        metresToShowY = 5;
 
         convertedRect = new Rect();
         currentViewportWorldCentre = new Vector2Point5D();
@@ -54,8 +54,10 @@ public class Viewport {
 
     //might not need this method
     public Rect worldToScreen(float objectX, float objectY, float objectWidth, float objectHeight){
+
         int left = (int) (screenCentreX - ((currentViewportWorldCentre.x - objectX) * pixelsPerMetreX));
         int top =  (int) (screenCentreY - ((currentViewportWorldCentre.y - objectY) * pixelsPerMetreY));
+
         int right = (int) (left + (objectWidth * pixelsPerMetreX));
         int bottom = (int) (top + (objectHeight * pixelsPerMetreY));
         convertedRect.set(left, top, right, bottom);
