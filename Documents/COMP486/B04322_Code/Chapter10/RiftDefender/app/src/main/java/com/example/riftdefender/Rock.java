@@ -17,8 +17,11 @@ public class Rock extends GameObject {
         // Where does the tile start
         // X and y locations from constructor parameters
         setWorldLocation(worldStartX, worldStartY, 0);
+
+        //collision detection
+        setRectHitbox();
     }
 
-    public void update(long fps, float gravity) {
+    public void update(long fps) {
     }
 }

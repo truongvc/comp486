@@ -161,8 +161,16 @@ public class LevelManager {
                 }//end if (c != '.')
             }//end for j
         }//end for i
-    }//end levelManager
+    }//end loadMapData
 
+    public void switchPlayingStatus() {
+        playing = !playing;
+        if (playing) {
+//            gravity = 6;
+        } else {
+//            gravity = 0;
+        }
+    }
 
-}
+}//end class
 

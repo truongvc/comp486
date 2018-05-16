@@ -3,8 +3,10 @@ package com.example.riftdefender;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 
 public abstract class GameObject {
+    private RectHitbox rectHitbox = new RectHitbox();
     private Vector2Point5D worldLocation;
     private float width;
     private float height;
@@ -13,11 +15,77 @@ public abstract class GameObject {
     private boolean visible = true;
     private int animFrameCount = 1;
     private char type;
-
     private String bitmapName;
 
-    public abstract void update(long fps, float gravity);
+    private float xVelocity;
+    private float yVelocity;
+    final int LEFT = -1;
+    final int RIGHT = 1;
+    final int UP = 2;
+    final int DOWN = 0;
+    private int facing;
+    private boolean moves = false;
 
+    //for collsion detection
+    public void setRectHitbox() {
+        rectHitbox.setTop(worldLocation.y);
+        rectHitbox.setLeft(worldLocation.x);
+        rectHitbox.setBottom(worldLocation.y + height);
+        rectHitbox.setRight(worldLocation.x + width);
+    }
+
+    //animation
+    // Most objects only have 1 frame
+    // And don't need to bother with these
+    private Animation anim = null;
+    private boolean animated;
+    private int animFps = 1;
+
+
+    //collision methods
+    RectHitbox getHitbox(){
+        return rectHitbox;
+    }
+
+
+    //animation methods
+    public void setAnimFps(int animFps) {
+        this.animFps = animFps;
+    }
+    public void setAnimFrameCount(int animFrameCount) {
+        this.animFrameCount = animFrameCount;
+    }
+    public boolean isAnimated() {
+        return animated;
+    }
+    public void setAnimated(Context context, int pixelsPerMetre, boolean animated){
+        this.animated = animated;
+        this.anim = new Animation(context, bitmapName,
+                height,
+                width,
+                animFps,
+                animFrameCount,
+                pixelsPerMetre );
+    }
+    public Rect getRectToDraw(long deltaTime){
+        return anim.getCurrentFrame(deltaTime, xVelocity, isMoves());
+    }
+
+    //move methods
+    void move(long fps){
+        if(xVelocity != 0) {
+            this.worldLocation.x += xVelocity / fps;
+        }
+        if(yVelocity != 0) {
+            this.worldLocation.y += yVelocity / fps;
+        }
+    }
+
+   // public abstract void update(long fps, float gravity);
+    public abstract void update(long fps);
+
+
+    //bitmap methods
     public String getBitmapName() {
         return bitmapName;
     }
@@ -52,6 +120,16 @@ public abstract class GameObject {
         this.worldLocation.x = x;
         this.worldLocation.y = y;
         this.worldLocation.z = z;
+    }
+
+    //getters and setters
+
+    public void setWorldLocationY(float y) {
+        this.worldLocation.y = y;
+    }
+
+    public void setWorldLocationX(float x) {
+        this.worldLocation.x = x;
     }
 
     public void setBitmapName(String bitmapName){
@@ -94,4 +172,37 @@ public abstract class GameObject {
         this.type = type;
     }
 
+    public int getFacing() {
+        return facing;
+    }
+    public void setFacing(int facing) {
+        this.facing = facing;
+    }
+    public float getxVelocity() {
+        return xVelocity;
+    }
+    public void setxVelocity(float xVelocity) {
+// Only allow for objects that can move
+        if(moves) {
+            this.xVelocity = xVelocity;
+        }
+    }
+    public float getyVelocity() {
+        return yVelocity;
+    }
+    public void setyVelocity(float yVelocity) {
+// Only allow for objects that can move
+        if(moves) {
+            this.yVelocity = yVelocity;
+        }
+    }
+    public boolean isMoves() {
+        return moves;
+    }
+    public void setMoves(boolean moves) {
+        this.moves = moves;
+    }
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }
